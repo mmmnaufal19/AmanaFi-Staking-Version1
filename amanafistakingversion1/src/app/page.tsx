@@ -1,6 +1,8 @@
+import { StakeToken } from "../../components/StakeToken";
 import { client } from "./client";
 import { chain } from "./chain";
-import { ConnectEmbed, ConnectButton } from "@/app/thirdweb";
+import { ConnectEmbed } from "@/app/thirdweb";
+
 export default function Home() {
   return (
     <div style={{
@@ -9,19 +11,13 @@ export default function Home() {
       alignItems: "center",
       height: "100vh",
       width: "100vw",
-      backgroundImage: "url('/workspace/AmanaFi-Staking-Version1/amanafistakingversion1/public/assets/amanafi-background-green.png')",
-      backgroundSize: "cover !important", 
-      backgroundPosition: "center !important" 
     }}>
       <div style={{ textAlign: "center" }}>
-      <ConnectEmbed
+        <ConnectEmbed
           client={client}
           chain={chain}
         />
-        <ConnectButton
-        client={client}
-        chain={chain}
-        />
+        <StakeToken />
       </div>
     </div>
   );
